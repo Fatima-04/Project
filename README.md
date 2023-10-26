@@ -1,2 +1,2 @@
-# COMP229-Web-App
+# COMP229-WebApp
  
