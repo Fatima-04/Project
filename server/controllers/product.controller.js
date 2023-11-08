@@ -4,7 +4,10 @@ const createProduct = async (req, res) => {
   const product = new Product(req.body);
   try {
     await product.save();
-    res.status(201).send(product);
+          //res.status(201).send(product);
+          return res.status(200).json({
+            message: "Successfully create product!"
+          })
   } catch (err) {
     res.status(400).send({ message: err.message });
   }
