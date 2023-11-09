@@ -1,15 +1,19 @@
 // Import necessary modules
-import config from './config/config.js';
-import app from './server/express.js';
-import mongoose from 'mongoose';
+import config from "./config/config.js";
+import app from "./server/express.js";
+import mongoose from "mongoose";
 
 // Set mongoose to use global Promise library
 mongoose.Promise = global.Promise;
 
 // Connect to MongoDB database
-mongoose.connect('mongodb+srv://codeconfectioners:o3w7g4hiPUBFEiro@code-confectioners.fxfufxh.mongodb.net/CodeConfectioner?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose
+  .connect(
+    "mongodb+srv://fatima:Aa654321@cluster0.us4uzea.mongodb.net/confectioners?retryWrites=true&w=majority",
+    { useNewUrlParser: true, useUnifiedTopology: true }
+  )
   .then(() => console.log("Connected to the database!")) // Log success message
-  .catch(err => console.error(`Unable to connect to database`, err)); // Log error message
+  .catch((err) => console.error(`Unable to connect to database`, err)); // Log error message
 
 // Define a route for the root path
 app.get("/", (req, res) => {
@@ -21,5 +25,5 @@ app.listen(config.port, (err) => {
   if (err) {
     console.log(err); // Log any errors
   }
-  console.info('Server started on port %s.', config.port); // Log success message
+  console.info("Server started on port %s.", config.port); // Log success message
 });
