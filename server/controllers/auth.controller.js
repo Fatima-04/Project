@@ -1,6 +1,5 @@
 import User from "../models/user.model.js";
 import jwt from "jsonwebtoken";
-//import expressJwt from 'express-jwt'
 import { expressjwt } from "express-jwt";
 import config from "./../../config/config.js";
 
@@ -40,13 +39,6 @@ const requireSignin = expressjwt({
   userProperty: "auth",
 });
 const hasAuthorization = (req, res, next) => {
-  // const authorized = req.profile && req.auth
-  //     && req.profile._id == req.auth._id
-  // if (!(authorized)) {
-  //     return res.status('403').json({
-  //         error: "User is not authorized"
-  //     })
-  // }
   const token = req.headers["auth"];
 
   jwt.verify(token, config.jwtSecret, (err, user) => {
