@@ -7,7 +7,7 @@ import config from "./../../config/config.js";
 const signin = async (req, res) => {
   try {
     let user = await User.findOne({ email: req.body.email });
-    if (!user) return res.status("401").json({ error: "User not found" });
+    if (!user) return res.status(401).json({ error: "User not found" });
     if (!user.authenticate(req.body.password)) {
       return res
         .status("401")
@@ -24,21 +24,23 @@ const signin = async (req, res) => {
       },
     });
   } catch (err) {
-    return res.status("401").json({ error: "Could not sign in" });
+    return res.status(401).json({ error: "Could not sign in" });
   }
 };
 
 const signout = (req, res) => {
   res.clearCookie("t");
-  return res.status("200").json({
+  return res.status(200).json({
     message: "signed out",
   });
 };
+
 const requireSignin = expressjwt({
   secret: config.jwtSecret,
   algorithms: ["HS256"],
   userProperty: "auth",
 });
+
 const hasAuthorization = (req, res, next) => {
   // const authorized = req.profile && req.auth
   //     && req.profile._id == req.auth._id
@@ -53,7 +55,7 @@ const hasAuthorization = (req, res, next) => {
     console.log(err);
 
     if (err) {
-      return res.status("403").json({
+      return res.status(403).json({
         error: "User is not authorized",
       });
     } else {
