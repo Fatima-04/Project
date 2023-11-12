@@ -1,8 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Navigation from '../src/components/navbar';
-import Header from '../src/components/header';
-   
+import Header from '../src/components/header';  
 const useStyles = makeStyles(theme => ({
   card: {
     maxWidth: 600,
@@ -18,14 +17,13 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function Home(){ 
+export default function Cakes(){ 
 const classes = useStyles()
 return (
 <div className='App'>
-  <h1>HOME</h1>
-  <Header title="Code Confectioners: Home"/>
+  <Header title="Code Confectioners: Cakes"/>
+  <h1>CAKES</h1>
   <Navigation/>
-  
 </div>
 )
 }
