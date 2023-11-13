@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Navigation from '../src/components/navbar';
 import Header from '../src/components/header';
+import Heading from '../src/components/heading';
    
 const useStyles = makeStyles(theme => ({
   card: {
@@ -22,10 +23,9 @@ export default function Home(){
 const classes = useStyles()
 return (
 <div className='App'>
-  <h1>HOME</h1>
   <Header title="Code Confectioners: Home"/>
+  <Heading/>
   <Navigation/>
-  
 </div>
 )
 }

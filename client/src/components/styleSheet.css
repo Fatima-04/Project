@@ -1,5 +1,4 @@
-/* styles.css */
-
+/*Navagation */
 nav {
     background-color: #333;
     padding: 10px;
@@ -9,6 +8,8 @@ nav {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    display: flex;
+  justify-content: space-around; 
   }
   
   li {
@@ -23,7 +24,18 @@ nav {
     font-size: 16px;
   }
   
-  li a:hover {
-    color: #ffcc00;
-  }
   
+  
+#navBar{
+  text-align: center;
+  
+}
+
+
+  /* Heading */
+  #logo{
+    float:inline-start;
+  }
+#brandName{
+  text-align: center;
+}
