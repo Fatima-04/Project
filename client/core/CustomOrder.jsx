@@ -2,6 +2,9 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Navigation from '../src/components/navbar';
 import Header from '../src/components/header';
+import Heading from '../src/components/heading';
+import CustomForm from '../src/components/customForm';
+
 const useStyles = makeStyles(theme => ({
   card: {
     maxWidth: 600,
@@ -22,8 +25,9 @@ const classes = useStyles()
 return (
 <div className='App'>
   <Header title="Code Confectioners: Custom Order"/>
-  <h1>CUSTOM</h1>
+  <Heading/>
   <Navigation/>
+  <CustomForm/>
 </div>
 )
 }

@@ -1,5 +1,5 @@
 // npm install react-helmet - Dynamically sets the page title
-// Head.jsx
+
 
 import React from 'react';
 import { Helmet } from 'react-helmet';

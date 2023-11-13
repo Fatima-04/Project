@@ -4,7 +4,7 @@ import './styleSheet.css';
 
 const Navigation = () => {
   return (
-    <nav>
+    <nav id='navBar'>
       <ul>
         <li>
           <Link to="/">Home</Link>

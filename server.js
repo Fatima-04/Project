@@ -20,6 +20,8 @@ app.get("/", (req, res) => {
   res.json({ message: "Welcome to User application." }); // Send a JSON response
 });
 
+
+
 // Start the server
 app.listen(config.port, (err) => {
   if (err) {
