@@ -1,3 +1,12 @@
+/* 
+Crystal Burnett – 301326769
+Alice Huynh – 301341638
+Fatima Tuz Zahra – 301347439
+Vinh Tran – 301324533
+Timothy Li – 301201910
+Code Confectioners E-Commerce Website for Bakery
+*/
+
 import User from "../models/user.model.js";
 import jwt from "jsonwebtoken";
 import { expressjwt } from "express-jwt";
@@ -9,7 +18,7 @@ const signin = async (req, res) => {
     if (!user) return res.status(401).json({ error: "User not found" });
     if (!user.authenticate(req.body.password)) {
       return res
-        .status("401")
+        .status(401)
         .send({ error: "Email and password don't match." });
     }
     const token = jwt.sign({ _id: user._id }, config.jwtSecret);
