@@ -9,7 +9,7 @@ Code Confectioners E-Commerce Website for Bakery
 
 import mongoose from "mongoose";
 import crypto from "crypto";
-//const mongoose = require('mongoose');
+
 const UserSchema = new mongoose.Schema({
   name: {
     type: String,
