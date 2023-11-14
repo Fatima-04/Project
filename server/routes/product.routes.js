@@ -13,21 +13,21 @@ import authController from "../controllers/auth.controller.js";
 const router = express.Router();
 
 //Allow only authenticated users to access the following routes
-router.use("/products", authController.hasAuthorization);
+router.use("/api/products", authController.hasAuthorization);
 
 // Create a new product
-router.post("/products", productController.createProduct);
+router.post("/api/products", productController.createProduct);
 
 // Retrieve all products
-router.get("/products", productController.getProducts);
+router.get("/api/products", productController.getProducts);
 
 // Retrieve a single product with productId
-router.get("/products/:id", productController.getProduct);
+router.get("/api/products/:id", productController.getProduct);
 
 // Update a product with productId
-router.put("/products/:id", productController.updateProduct);
+router.put("/api/products/:id", productController.updateProduct);
 
 // Delete a product with productId
-router.delete("/products/:id", productController.deleteProduct);
+router.delete("/api/products/:id", productController.deleteProduct);
 
 export default router;
