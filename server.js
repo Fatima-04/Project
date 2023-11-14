@@ -8,10 +8,7 @@ mongoose.Promise = global.Promise;
 
 // Connect to MongoDB database
 mongoose
-  .connect(
-    "mongodb+srv://fatima:Aa654321@cluster0.us4uzea.mongodb.net/confectioners?retryWrites=true&w=majority",
-    { useNewUrlParser: true, useUnifiedTopology: true }
-  )
+  .connect(config.mongoUri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("Connected to the database!")) // Log success message
   .catch((err) => console.error(`Unable to connect to database`, err)); // Log error message
 
