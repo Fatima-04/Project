@@ -6,8 +6,8 @@ const auth = {
     if (typeof window == "undefined")
       return false
 
-    if (sessionStorage.getItem('jwt'))
-      return JSON.parse(sessionStorage.getItem('jwt'))
+    if (localStorage.getItem('jwt'))
+      return JSON.parse(localStorage.getItem('jwt'))
     else
       return false
   },
@@ -16,7 +16,9 @@ const auth = {
     //This method take in JWT credential (jwt) and a callback function (cb)
   authenticate(jwt, cb) {
     if (typeof window !== "undefined")
-      sessionStorage.setItem('jwt', JSON.stringify(jwt))
+    //localStorage is used to extend the user auth state across 
+    //the tabs in the browser.
+    localStorage.setItem('jwt', JSON.stringify(jwt))
     cb()
   },
 
@@ -24,19 +26,19 @@ const auth = {
 //This method takes a callback function as an argument
   clearJWT(cb) {
     if (typeof window !== "undefined")
-      sessionStorage.removeItem('jwt')
+    localStorage.removeItem('jwt')
     cb()
-    //This is optional because we use sessionStorage instead of cookie to store JWT credentials
     signout().then((data) => {
       document.cookie = "t=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"
     })
   },
+
   updateUser(user, cb) {
     if(typeof window !== "undefined"){
-      if(sessionStorage.getItem('jwt')){
-         let auth = JSON.parse(sessionStorage.getItem('jwt'))
+      if(localStorage.getItem('jwt')){
+         let auth = JSON.parse(localStorage.getItem('jwt'))
          auth.user = user
-         sessionStorage.setItem('jwt', JSON.stringify(auth))
+         localStorage.setItem('jwt', JSON.stringify(auth))
          cb()
        }
     }
