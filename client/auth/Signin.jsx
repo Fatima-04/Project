@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 
 //Take props in the argument that contain React Router variables
-export default function signin(props){
+export default function Signin(props){
     const [values, setValues] = useState({
         email: '',
         password: '',
