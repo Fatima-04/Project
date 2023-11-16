@@ -3,7 +3,7 @@ The sign in method will take user sign-in data from the view component,
 then use fetch to make a POST call to verify the user with the backend
 */
 
-const signin = async (user) => {
+const Signin = async (user) => {
     try {
         let respone = await fetch('/auth/signin/', {
             method : 'POST',
@@ -25,7 +25,7 @@ const signin = async (user) => {
 The signout method use GET fetch to call te signpout API endpoint on the server
 */
 
-const signout = async () => {
+const Signout = async () => {
     try {
         let response = await fetch('/auth/signout/', {
             method: 'GET'
@@ -37,4 +37,4 @@ const signout = async () => {
     }
 }
 
-export {signin, signout}
+export {Signin, Signout}
