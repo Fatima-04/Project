@@ -51,10 +51,7 @@ const Navigation = () => {
         {auth.isAuthenticated() && (
           <span>
             <li>
-              <Link
-                to="/customorder"
-                style={isActive(location, "/customorder")}
-              >
+              <Link to="/customorder" style={isActive(location, "/customorder")}>
                 Custom Order
               </Link>
             </li>

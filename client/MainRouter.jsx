@@ -5,11 +5,11 @@ import About from "./core/About";
 import Cakes from "./core/Cakes";
 import Account from "./core/Account";
 import CustomOrder from "./core/CustomOrder";
-import Signup from "./core/Signup";
+import Signup from "./user/Signup";
 import Signin from "./lib/Signin";
 import PrivateRoute from "./lib/PrivateRoute.jsx";
 import Switch from "react";
-//import Signin from "./lib/Signin";
+
 
 
 const MainRouter = () => {
