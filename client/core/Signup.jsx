@@ -19,15 +19,14 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function About(){ 
+export default function Signup(){ 
 const classes = useStyles()
 return (
 <div className='App'>
-  <Header title="Code Confectioners: About"/>
+  <Header title="Code Confectioners: Signup Page"/>
   <Heading/>
   <Navigation/>
-
-  This is a page about the store.
+  This is a sign up page.
 </div>
 )
 }

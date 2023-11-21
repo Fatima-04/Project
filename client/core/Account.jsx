@@ -1,13 +1,13 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Navigation from '../src/components/navbar';
-import Header from '../src/components/header';   
-import Heading from '../src/components/heading';
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Navigation from "../src/components/navbar";
+import Header from "../src/components/header";
+import Heading from "../src/components/heading";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   card: {
     maxWidth: 600,
-    margin: 'auto',
+    margin: "auto",
     marginTop: theme.spacing(5),
   },
   title: {
@@ -19,13 +19,14 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function Account(){ 
-const classes = useStyles()
-return (
-<div className='App'>
-<Header title="Code Confectioners: Account"/>
-<Heading/>
-  <Navigation/>
-</div>
-)
+export default function Account() {
+  const classes = useStyles();
+  return (
+    <div className="App">
+      <Header title="Code Confectioners: Account" />
+      <Heading />
+      <Navigation />
+      This is the account page
+    </div>
+  );
 }
