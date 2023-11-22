@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-// Table to display cakes
+// Table to display 
 const CakeDisplay = ({ cakes }) => {
   return (
     <div>

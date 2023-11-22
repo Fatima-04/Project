@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Navigation from '../src/components/navbar';
 import Header from '../src/components/header';
 import Heading from '../src/components/heading';
-import CakeDisplay from '../src/components/cakeDisplay';
+import CakeDisplay from './cakeDisplay';
 
 const useStyles = makeStyles((theme) => ({
   card: {
