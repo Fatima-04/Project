@@ -57,20 +57,8 @@ const Navigation = () => {
             </li>
 
             <li>
-              <Link to="/account" style={isActive(location, "/account")}>
-                Account
-              </Link>
-            </li>
-
-            <li>
               <Link to={"/user/" + auth.isAuthenticated().user._id}>
                 Profile
-              </Link>
-            </li>
-
-            <li>
-              <Link to={"/user/" + auth.isAuthenticated().user._id}>
-                Cart
               </Link>
             </li>
 

@@ -88,7 +88,7 @@ export default function Signin(props) {
         {values.error && (
           <Typography component="p" color="error">
             <Icon color="error" className="loginform-error">
-              error
+              Error: 
             </Icon>
             {values.error}
           </Typography>
