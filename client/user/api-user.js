@@ -18,7 +18,7 @@ const create = async (user) => {
                 'Accept' : 'application/json',
                 'Content-Type' : 'application/json'
             },
-            body: JSON.stringigy(user)
+            body: JSON.stringify(user)
         })
         //This method returns a promise to the server
         //The component that calls this method can use this promise 
