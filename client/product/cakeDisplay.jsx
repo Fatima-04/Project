@@ -1,7 +1,6 @@
-import React from 'react';
+import React from "react";
 
-
-// Table to display 
+// Table to display
 const CakeDisplay = ({ cakes }) => {
   return (
     <div>

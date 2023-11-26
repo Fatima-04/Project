@@ -1,14 +1,16 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Navigation from '../src/components/navbar';
-import Header from '../src/components/header';
-import Heading from '../src/components/heading';
-import CakeDisplay from './cakeDisplay';
+import React, { useState, useEffect } from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Navigation from "../src/components/navbar";
+import Header from "../src/components/header";
+import Heading from "../src/components/heading";
+import CakeDisplay from "./cakeDisplay";
+import axios from "axios";
+import auth from "../lib/auth-helper";
 
 const useStyles = makeStyles((theme) => ({
   card: {
     maxWidth: 600,
-    margin: 'auto',
+    margin: "auto",
     marginTop: theme.spacing(5),
   },
   title: {
@@ -21,20 +23,30 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Cakes() {
+  const [cakes, setCakes] = useState([]);
+
+  const getAllCakes = async () => {
+    let cakesArray = await axios.get("http://localhost:3000/api/products", {
+      headers: {
+        auth: auth.isAuthenticated().token,
+      },
+    });
+    setCakes(cakesArray.data);
+  };
+
+  useEffect(() => {
+    getAllCakes();
+  }, []);
+
   const classes = useStyles();
 
   // EXAMPLE CAKES MUST BE REPLACED WITH API
-  const cakes = [
-    { name: 'Chocolate Cake', price: '$20', flavor: 'Chocolate' },
-    { name: 'Vanilla Cake', price: '$18', flavor: 'Vanilla' },
-  ];
-
   return (
     <div className="App">
       <Header title="Code Confectioners: Cakes" />
       <Heading />
       <Navigation />
-      <CakeDisplay cakes={cakes} />
+      {cakes && <CakeDisplay cakes={cakes} />}
     </div>
   );
 }
