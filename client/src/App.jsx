@@ -1,9 +1,9 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { ThemeProvider } from '@material-ui/styles';
 import MainRouter from '../MainRouter';
 import theme from '../theme';
-
+import account from '../core/Account'
 
 const App = () => {
 
@@ -15,6 +15,18 @@ const App = () => {
       jssStyles.parentNode.removeChild(jssStyles);
     }
   }, []);
+
+
+  function App() {
+    return (
+      <Router>
+        <Switch>
+          {/* Other routes */}
+          <Route path="/account-settings" component={AccountSettings} />
+        </Switch>
+      </Router>
+    );
+  }
 
   return (
     <Router>

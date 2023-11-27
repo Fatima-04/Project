@@ -1,32 +1,32 @@
+// MainRouter.jsx
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "./core/Home";
 import About from "./core/About";
-import Cakes from "./product/Cakes";
+import Cakes from "./core/Cakes";
 import CreateCake from "./product/add";
-import Account from "./user/Account.jsx";
-import CustomOrder from "./order/CustomOrder.jsx";
+import CustomOrder from "./core/CustomOrder";
 import Signup from "./user/Signup";
 import Signin from "./lib/Signin";
-import PrivateRoute from "./lib/PrivateRoute.jsx";
-import Switch from "react";
+import AccountSetting from "./core/AccountSetting";
+import Account from "./core/Account"; // Import your AccountSetting component
 
 const MainRouter = () => {
   return (
     <div>
       <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/about" element={<About />} />
-        <Route exact path="/cake" element={<Cakes />} />
-        <Route exact path="/add" element={<CreateCake />} />
-
-        <Route exact path="/customorder" element={<CustomOrder />} />
-        <Route exact path="/signup" element={<Signup />} />
-        <Route exact path="/signin" element={<Signin />} />
-
-        <Route exact path="/account" element={<Account />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/cake" element={<Cakes />} />
+        <Route path="/add" element={<CreateCake />} />
+        <Route path="/customorder" element={<CustomOrder />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/signin" element={<Signin />} />
+        <Route path="/user/:userId" element={<AccountSetting />} />
+        <Route path="/Account" element={<Account />} />
       </Routes>
     </div>
   );
 };
+
 export default MainRouter;
