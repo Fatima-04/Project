@@ -11,11 +11,14 @@ import productRoutes from "./routes/product.routes.js";
 import path from "path";
 import Stripe from 'stripe';
 
+
 const app = express();
 const CURRENT_WORKING_DIR = process.cwd();
 
+
 // Initialize Stripe with your secret key
 const stripe = Stripe('your-stripe-secret-key');
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -29,6 +32,7 @@ app.use("/dist", express.static(path.join(CURRENT_WORKING_DIR, "dist")));
 app.use("/", userRoutes);
 app.use("/", authRoutes);
 app.use("/", productRoutes);
+
 
 let orders = []; // This will act as our database for simplicity
 

@@ -5,8 +5,6 @@ import MainRouter from '../MainRouter';
 import theme from '../theme';
 import account from '../core/Account'
 
-//import { hot } from 'react-hot-loader'
-
 const App = () => {
 
   React.useEffect(() => {
@@ -18,6 +16,7 @@ const App = () => {
     }
   }, []);
 
+
   function App() {
     return (
       <Router>
@@ -28,6 +27,7 @@ const App = () => {
       </Router>
     );
   }
+
   return (
     <Router>
       <ThemeProvider theme={theme}>

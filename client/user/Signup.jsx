@@ -79,6 +79,7 @@ export default function Signup() {
   }   
   
   //Component TextField from Material-UI is used to render the input fields
+
     return (<div>
       <Card className={classes.card}>
         <CardContent>
@@ -105,6 +106,7 @@ export default function Signup() {
             New account successfully created.
           </DialogContentText>
         </DialogContent>
+
         <DialogActions>
           <Link to="/signin">
             <Button color="primary" autoFocus="autoFocus" variant="contained">

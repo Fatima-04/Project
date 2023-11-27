@@ -1,3 +1,4 @@
+
 import config from "./config/config.js";
 import app from "./server/express.js";
 import mongoose from "mongoose";
@@ -25,3 +26,4 @@ app.listen(config.port, (err) => {
   }
   console.info("Server started on port %s.", config.port); // Log success message
 });
+

@@ -1,3 +1,4 @@
+
 // MainRouter.jsx
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
@@ -10,10 +11,12 @@ import Signin from './lib/Signin';
 import AccountSetting from './core/AccountSetting'; 
 import Account from './core/Account'// Import your AccountSetting component
 
+
 const MainRouter = () => {
   return (
     <div>
       <Routes>
+
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/cake" element={<Cakes />} />
@@ -22,6 +25,7 @@ const MainRouter = () => {
         <Route path="/signin" element={<Signin />} />
         <Route path="/user/:userId" element={<AccountSetting />} />
         <Route path="/Account" element={<Account />} />
+
       </Routes>
     </div>
   );

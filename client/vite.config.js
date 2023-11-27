@@ -1,3 +1,4 @@
+
 import path from 'path';
 import dotenv from 'dotenv';
 import { defineConfig } from 'vite';
@@ -25,6 +26,7 @@ export default defineConfig({
   build: {
     manifest: true,
     rollupOptions: {
+
       input: './src/main.jsx',
     },
   },
@@ -33,6 +35,7 @@ export default defineConfig({
       '@': path.resolve(__dirname, 'src'), // Adjust the alias as per your project structure
       '@client': path.resolve(__dirname, 'src/client'),
       '@user': path.resolve(__dirname, 'user'), // Corrected the alias for user
+
     },
   },
 });

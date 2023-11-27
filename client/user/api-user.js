@@ -1,3 +1,4 @@
+
 // api-user.js
 
 const create = async (user) => {
@@ -17,11 +18,13 @@ const create = async (user) => {
     }
 };
 
+
 const list = async (signal) => {
     try {
         let response = await fetch('/api/users/', {
             method: 'GET',
             signal: signal,
+
         });
         return await response.json();
     } catch (err) {

@@ -36,13 +36,18 @@ const Navigation = () => {
         </li>
 
         {!auth.isAuthenticated() && (
+
           <span>
+
+          <ul>
+
             <li>
               <Link to="/signup" style={isActive(location, "/signup")}>
                 Sign Up
               </Link>
             </li>
             <li>
+
               <Link to="/signin">Log in</Link>
             </li>
           </span>
@@ -50,6 +55,14 @@ const Navigation = () => {
 
         {auth.isAuthenticated() && (
           <span>
+              <Link to="/signin">Sign In</Link>
+            </li>
+          </ul>
+        )}
+
+        {auth.isAuthenticated() && (
+          <ul>
+
             <li>
               <Link to="/customorder" style={isActive(location, "/customorder")}>
                 Custom Order
@@ -59,10 +72,12 @@ const Navigation = () => {
             <li>
               <Link to="/account" style={isActive(location, "/account")}>
                 Account
+
               </Link>
             </li>
 
             <li>
+
       <Link to={`/user/${auth.isAuthenticated().user._id}`}>
         {auth.isAuthenticated().user.name}
       </Link>
@@ -78,6 +93,7 @@ const Navigation = () => {
               </Button>
             </li>
           </span>
+
         )}
       </ul>
     </nav>
