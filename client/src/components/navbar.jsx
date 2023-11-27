@@ -36,13 +36,25 @@ const Navigation = () => {
         </li>
 
         {!auth.isAuthenticated() && (
+
+          <span>
+
           <ul>
+
             <li>
               <Link to="/signup" style={isActive(location, "/signup")}>
                 Sign Up
               </Link>
             </li>
             <li>
+
+              <Link to="/signin">Log in</Link>
+            </li>
+          </span>
+        )}
+
+        {auth.isAuthenticated() && (
+          <span>
               <Link to="/signin">Sign In</Link>
             </li>
           </ul>
@@ -50,6 +62,7 @@ const Navigation = () => {
 
         {auth.isAuthenticated() && (
           <ul>
+
             <li>
               <Link to="/customorder" style={isActive(location, "/customorder")}>
                 Custom Order
@@ -57,24 +70,30 @@ const Navigation = () => {
             </li>
 
             <li>
-              <Link to={"/user/" + auth.isAuthenticated().user._id}>
-                Profile
+              <Link to="/account" style={isActive(location, "/account")}>
+                Account
+
               </Link>
             </li>
 
             <li>
-            <Link to="/" style={{ color: 'inherit', textDecoration: 'none' }}>
-              <div
+
+      <Link to={`/user/${auth.isAuthenticated().user._id}`}>
+        {auth.isAuthenticated().user.name}
+      </Link>
+    </li>
+            <li>
+              <Button
+                color="inherit"
                 onClick={() => {
-                  auth.clearJWT();
+                  auth.clearJWT(() => navigate("/"));
                 }}
               >
-                Sign Out
-              </div>
-            </Link>
-              
+                Sign out
+              </Button>
             </li>
-          </ul>
+          </span>
+
         )}
       </ul>
     </nav>
