@@ -23,11 +23,6 @@ const Navigation = () => {
           </Link>
         </li>
         <li>
-          <Link to="/cart" style={isActive(location, "/cart")}>
-            Cart
-          </Link>
-        </li>
-        <li>
           <Link to="/cake" style={isActive(location, "/cake")}>
             Cakes
           </Link>
@@ -52,16 +47,6 @@ const Navigation = () => {
           <span>
             <ul>
               <li>
-                <Link to="/signin">Sign In</Link>
-              </li>
-            </ul>
-          </span>
-        )}
-
-        {auth.isAuthenticated() && (
-          <span>
-            <ul>
-              <li>
                 <Link
                   to="/customorder"
                   style={isActive(location, "/customorder")}
@@ -71,8 +56,8 @@ const Navigation = () => {
               </li>
 
               <li>
-                <Link to="/account" style={isActive(location, "/account")}>
-                  Account
+                <Link to="/cart" style={isActive(location, "/cart")}>
+                  Cart
                 </Link>
               </li>
 
