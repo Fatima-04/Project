@@ -15,8 +15,8 @@ const Navigation = () => {
             </Link>
           </Typography>
           <div style={{ marginLeft: 'auto' }}>
-            <Link to="/about" style={{ color: 'inherit', textDecoration: 'none', marginLeft: '10px' }}>
-              About
+            <Link to="/cart" style={{ color: 'inherit', textDecoration: 'none', marginLeft: '10px' }}>
+              Cart
             </Link>
             <Link to="/update-profile" style={{ color: 'inherit', textDecoration: 'none', marginLeft: '10px' }}>
               Update User

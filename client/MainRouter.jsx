@@ -2,7 +2,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "./core/Home";
-import About from "./core/About";
+import Cart from "./core/Cart";
 import Cakes from "./product/Cakes";
 import CreateCake from "./product/add";
 import UpdateCake from "./product/update";
@@ -18,7 +18,7 @@ const MainRouter = () => {
     <div>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="/cake" element={<Cakes />} />
         <Route path="/add" element={<CreateCake />} />
         <Route path="/update/:cakeId" element={<UpdateCake />} />

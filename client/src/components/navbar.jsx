@@ -23,8 +23,8 @@ const Navigation = () => {
           </Link>
         </li>
         <li>
-          <Link to="/about" style={isActive(location, "/about")}>
-            About
+          <Link to="/cart" style={isActive(location, "/cart")}>
+            Cart
           </Link>
         </li>
         <li>

@@ -19,15 +19,15 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function About(){ 
+export default function Cart(){ 
 const classes = useStyles()
 return (
 <div className='App'>
-  <Header title="Code Confectioners: About"/>
+  <Header title="Code Confectioners: Cart"/>
   <Heading/>
   <Navigation/>
 
-  This is a page about the store.
+ 
 </div>
 )
 }
