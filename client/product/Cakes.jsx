@@ -46,10 +46,11 @@ export default function Cakes() {
       <Header title="Code Confectioners: Cakes" />
       <Heading />
       <Navigation />
-      <button id="addCake">
-        <a href="/add">Add Cake</a>
-        {""}
-      </button>
+      {auth.isAuthenticated() && (
+        <button id="addCake">
+          <a href="/add">Add Cake</a>
+        </button>
+      )}
       {cakes && <CakeDisplay cakes={cakes} />}
     </div>
   );
