@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import auth from "../../lib/auth-helper";
 import Button from "@material-ui/core/Button";
-import './styleSheet.css';
+import "./styleSheet.css";
 
 const isActive = (location, path) => {
   return location.pathname === path
@@ -10,9 +10,7 @@ const isActive = (location, path) => {
     : { color: "#ffffff" };
 };
 
-
 const Navigation = () => {
-
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -36,64 +34,65 @@ const Navigation = () => {
         </li>
 
         {!auth.isAuthenticated() && (
-
           <span>
-
-          <ul>
-
-            <li>
-              <Link to="/signup" style={isActive(location, "/signup")}>
-                Sign Up
-              </Link>
-            </li>
-            <li>
-
-              <Link to="/signin">Log in</Link>
-            </li>
+            <ul>
+              <li>
+                <Link to="/signup" style={isActive(location, "/signup")}>
+                  Sign Up
+                </Link>
+              </li>
+              <li>
+                <Link to="/signin">Log in</Link>
+              </li>
+            </ul>
           </span>
         )}
 
         {auth.isAuthenticated() && (
           <span>
-              <Link to="/signin">Sign In</Link>
-            </li>
-          </ul>
+            <ul>
+              <li>
+                <Link to="/signin">Sign In</Link>
+              </li>
+            </ul>
+          </span>
         )}
 
         {auth.isAuthenticated() && (
-          <ul>
+          <span>
+            <ul>
+              <li>
+                <Link
+                  to="/customorder"
+                  style={isActive(location, "/customorder")}
+                >
+                  Custom Order
+                </Link>
+              </li>
 
-            <li>
-              <Link to="/customorder" style={isActive(location, "/customorder")}>
-                Custom Order
-              </Link>
-            </li>
+              <li>
+                <Link to="/account" style={isActive(location, "/account")}>
+                  Account
+                </Link>
+              </li>
 
-            <li>
-              <Link to="/account" style={isActive(location, "/account")}>
-                Account
-
-              </Link>
-            </li>
-
-            <li>
-
-      <Link to={`/user/${auth.isAuthenticated().user._id}`}>
-        {auth.isAuthenticated().user.name}
-      </Link>
-    </li>
-            <li>
-              <Button
-                color="inherit"
-                onClick={() => {
-                  auth.clearJWT(() => navigate("/"));
-                }}
-              >
-                Sign out
-              </Button>
-            </li>
+              <li>
+                <Link to={`/user/${auth.isAuthenticated().user._id}`}>
+                  {auth.isAuthenticated().user.name}
+                </Link>
+              </li>
+              <li>
+                <Button
+                  color="inherit"
+                  onClick={() => {
+                    auth.clearJWT(() => navigate("/"));
+                  }}
+                >
+                  Sign out
+                </Button>
+              </li>
+            </ul>
           </span>
-
         )}
       </ul>
     </nav>
