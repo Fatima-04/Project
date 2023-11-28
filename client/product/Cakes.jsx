@@ -3,7 +3,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import Navigation from "../src/components/navbar";
 import Header from "../src/components/header";
 import Heading from "../src/components/heading";
-import CakeDisplay from "./cakeDisplay";
 import axios from "axios";
 import auth from "../lib/auth-helper";
 
@@ -38,6 +37,24 @@ export default function Cakes() {
     getAllCakes();
   }, []);
 
+  const handleDelete = (cakeId) => {
+    axios.delete("http://localhost:3000/api/products/" + cakeId, {
+      headers: {
+        auth: auth.isAuthenticated().token,
+      },
+    });
+    getAllCakes();
+  };
+
+  const handleUpdate = (cakeId) => {
+    axios.put("http://localhost:3000/api/products/" + cakeId, {
+      headers: {
+        auth: auth.isAuthenticated().token,
+      },
+    });
+    getAllCakes();
+  };
+
   const classes = useStyles();
 
   // EXAMPLE CAKES MUST BE REPLACED WITH API
@@ -51,7 +68,35 @@ export default function Cakes() {
           <a href="/add">Add Cake</a>
         </button>
       )}
-      {cakes && <CakeDisplay cakes={cakes} />}
+      <div>
+        <h2>Cakes</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Flavor</th>
+              <th> </th>
+              <th> </th>
+            </tr>
+          </thead>
+          <tbody>
+            {cakes.map((cake, index) => (
+              <tr key={index}>
+                <td>{cake.name}</td>
+                <td>{cake.price}</td>
+                <td>{cake.flavor}</td>
+                <td>
+                  <button id={cake._id}>update</button>
+                </td>
+                <td>
+                  <button onClick={() => handleDelete(cake._id)}>Delete</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }
