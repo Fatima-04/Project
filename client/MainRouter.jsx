@@ -3,7 +3,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "./core/Home";
 import About from "./core/About";
-import Cakes from "./core/Cakes";
+import Cakes from "./product/Cakes";
 import CreateCake from "./product/add";
 import CustomOrder from "./core/CustomOrder";
 import Signup from "./user/Signup";
