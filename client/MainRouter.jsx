@@ -5,6 +5,8 @@ import Home from "./core/Home";
 import About from "./core/About";
 import Cakes from "./product/Cakes";
 import CreateCake from "./product/add";
+import UpdateCake from "./product/update";
+
 import CustomOrder from "./core/CustomOrder";
 import Signup from "./user/Signup";
 import Signin from "./lib/Signin";
@@ -19,6 +21,7 @@ const MainRouter = () => {
         <Route path="/about" element={<About />} />
         <Route path="/cake" element={<Cakes />} />
         <Route path="/add" element={<CreateCake />} />
+        <Route path="/update/:cakeId" element={<UpdateCake />} />
         <Route path="/customorder" element={<CustomOrder />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/signin" element={<Signin />} />

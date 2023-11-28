@@ -47,11 +47,15 @@ export default function Cakes() {
   };
 
   const handleUpdate = (cakeId) => {
-    axios.put("http://localhost:3000/api/products/" + cakeId, {
-      headers: {
-        auth: auth.isAuthenticated().token,
-      },
-    });
+    axios.put(
+      "http://localhost:3000/api/products/" + cakeId,
+      {},
+      {
+        headers: {
+          auth: auth.isAuthenticated().token,
+        },
+      }
+    );
     getAllCakes();
   };
 
@@ -87,7 +91,9 @@ export default function Cakes() {
                 <td>{cake.price}</td>
                 <td>{cake.flavor}</td>
                 <td>
-                  <button id={cake._id}>update</button>
+                  <button>
+                    <a href={"/update/" + cake._id}>Update</a>
+                  </button>
                 </td>
                 <td>
                   <button onClick={() => handleDelete(cake._id)}>Delete</button>
