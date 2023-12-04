@@ -1,20 +1,4 @@
 /*Navagation */
-nav {
-  background-color: #6c6767fe;
-  padding: 10px;
-  margin: 20px;
-}
-nav a:link {
-  border-color: rgb(79, 136, 215);
-}
-nav a:visited {
-  border-color: rgb(79, 136, 215);
-}
-nav a:hover {
-  color: rgb(42, 165, 87);
-  background-color: rgb(182, 182, 182);
-}
-
 .listImg {
   width: 300px;
   height: 300px;
@@ -46,9 +30,33 @@ li a {
 }
 
 /* Heading */
-#logo {
-  float: inline-start;
+img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 50px;
+  padding: 10px;
 }
+
+#header-container {
+  height: 100%;
+  width: 100%;
+  background-color: #ffb4a2;
+  padding-top: 50px;
+  position: relative;
+  text-align: center;
+}
+
+#title-container {
+  border: 5px solid #ffcdb2;
+  padding: 10px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin: 0 auto;
+  display: inline-block;
+  width: auto;
+  border-radius: 25px;
+}
+
 #brandName {
   text-align: center;
 }
@@ -57,4 +65,33 @@ li a {
   padding: 10px;
   margin: 20px;
   text-decoration: none;
+}
+
+.header {
+  text-align: center;
+  letter-spacing: 5px;
+  color: #6d6875;
+}
+
+/*Nav Bar*/
+#nav-container {
+  
+  width: 100%;
+  background-color: #ffcdb2;
+}
+
+.container-fluid {
+  margin: auto;
+  margin-top: 50px;
+  width: 95%;
+  height: 100%;
+  border-radius: 25px;
+}
+a.nav-link {
+  color: #6d6875;
+  font-weight: 600;
+  font-size: 2vw;
+  box-shadow: inset 0 0 0 0 #b5838d;
+  transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border-radius: 5px;
 }

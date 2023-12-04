@@ -3,8 +3,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import Navigation from '../src/components/navbar';
 import Header from '../src/components/header';
 import Heading from '../src/components/heading';
-   
-const useStyles = makeStyles(theme => ({
+import Body from '../src/components/body';
+
+const useStyles = makeStyles((theme) => ({
   card: {
     maxWidth: 600,
     margin: 'auto',
@@ -19,13 +20,14 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function Home(){ 
-const classes = useStyles()
-return (
-<div className='App'>
-  <Header title="Code Confectioners: Home"/>
-  <Heading/>
-  <Navigation/>
-</div>
-)
+export default function Home() {
+  const classes = useStyles();
+  return (
+    <div className="App">
+      <Header title="Code Confectioners: Home" />
+      <Heading />
+      <Navigation />
+      <Body />
+    </div>
+  );
 }
