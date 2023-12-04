@@ -1,7 +1,24 @@
 /*Navagation */
 nav {
-  background-color: #333;
+  background-color: #6c6767fe;
   padding: 10px;
+  margin: 20px;
+}
+nav a:link {
+  border-color: rgb(79, 136, 215);
+}
+nav a:visited {
+  border-color: rgb(79, 136, 215);
+}
+nav a:hover {
+  color: rgb(42, 165, 87);
+  background-color: rgb(182, 182, 182);
+}
+
+.listImg {
+  width: 300px;
+  height: 300px;
+  float: right;
 }
 
 ul {
@@ -38,5 +55,6 @@ li a {
 #addCake {
   float: right;
   padding: 10px;
-  margin: 10px;
+  margin: 20px;
+  text-decoration: none;
 }
