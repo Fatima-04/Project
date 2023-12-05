@@ -64,9 +64,9 @@ app.get('/api/checkout-session', async (req, res) => {
   res.json({ id: session.id });
 });
 
-app.get('/', (req, res) => {
-  res.status(200).send(Template());
-});
+// app.get('/', (req, res) => {
+//   res.status(200).send(Template());
+// });
 
 app.use((err, req, res, next) => {
   if (err.name === 'UnauthorizedError') {
