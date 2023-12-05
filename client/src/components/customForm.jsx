@@ -23,70 +23,76 @@ const CustomForm = ({ onSubmit }) => {
   };
 
   return (
-    <div className="container-fluid">
-      <form
-        className="row row-cols-lg-auto g-3 align-items-center"
-        onSubmit={handleSubmit}
-      >
-        <div className="col-12">
-          <label
-            className="visually-hidden"
-            htmlFor="inlineFormInputGroupUsername"
+    <body>
+      <div className="container-fluid" style={{ padding: '20px' }}>
+        <h1>Custom Order Form</h1>
+        <div className="container">
+          <form
+            className="row row-cols-lg-auto g-3 align-items-center"
+            onSubmit={handleSubmit}
           >
-            Name:
-            <div className="input-group">
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              />
+            <div className="col-12">
+              <label
+                className="visually-hidden"
+                htmlFor="inlineFormInputGroupUsername"
+              >
+                Name:
+              </label>
+              <div className="input-group">
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+              </div>
             </div>
-          </label>
-        </div>
-        <br />
-        <div className="col-12">
-          <label
-            className="visually-hidden"
-            htmlFor="inlineFormInputGroupUsername"
-          >
-            Price:
-            <div className="input-group">
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Price"
-                value={price}
-                onChange={(e) => setPrice(e.target.value)}
-              />
+            <br />
+            <div className="col-12">
+              <label
+                className="visually-hidden"
+                htmlFor="inlineFormInputGroupUsername"
+              >
+                Price:
+              </label>
+              <div className="input-group">
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Price"
+                  value={price}
+                  onChange={(e) => setPrice(e.target.value)}
+                />
+              </div>
             </div>
-          </label>
+            <br />
+            <label
+              className="visually-hidden"
+              htmlFor="inlineFormInputGroupUsername"
+            >
+              Flavor:
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Flavor"
+              value={flavor}
+              onChange={(e) => setFlavor(e.target.value)}
+            />
+
+            <br />
+            <button
+              type="submit"
+              className="btn btn-primary"
+              onClick={handleSubmit}
+            >
+              Submit
+            </button>
+          </form>
         </div>
-        <br />
-        <label
-          className="visually-hidden"
-          htmlFor="inlineFormInputGroupUsername"
-        >
-          Flavor:
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Flavor"
-            value={flavor}
-            onChange={(e) => setFlavor(e.target.value)}
-          />
-        </label>
-        <br />
-        <button
-          type="submit"
-          className="btn btn-primary"
-          onClick={handleSubmit}
-        >
-          Submit
-        </button>
-      </form>
-    </div>
+      </div>
+    </body>
   );
 };
 
