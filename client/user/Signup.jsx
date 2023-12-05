@@ -80,7 +80,8 @@ export default function Signup() {
   
   //Component TextField from Material-UI is used to render the input fields
 
-    return (<div>
+    return (
+     <div>
       <Card className={classes.card}>
         <CardContent>
           <Typography variant="h6" className={classes.title}>
@@ -116,5 +117,6 @@ export default function Signup() {
         </DialogActions>
       </Dialog>
     </div>
+
   )
 }
