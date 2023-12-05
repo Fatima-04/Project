@@ -72,7 +72,7 @@ export default function Cakes() {
         <div className="container-fluid">
           <h1>Cakes</h1>
           {auth.isAuthenticated() && (
-            <a id="addCake" className="btn btn-secondary" href="/add">
+            <a id="addCake" className="btn btn-outline-secondary" href="/add">
               Add Cake
             </a>
           )}
@@ -95,7 +95,7 @@ export default function Cakes() {
                   <td>{cake.flavor}</td>
                   <td>
                     <a
-                      className="btn btn-secondary"
+                      className="btn btn-outline-secondary"
                       href={'/update/' + cake._id}
                     >
                       Update
@@ -103,7 +103,7 @@ export default function Cakes() {
                   </td>
                   <td>
                     <button
-                      className="btn btn-danger"
+                      className="btn btn-outline-danger"
                       onClick={() => handleDelete(cake._id)}
                     >
                       Delete

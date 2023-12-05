@@ -6,10 +6,10 @@ export default function Body() {
       <div className="container-fluid">
         <div className="container-text-center">
           <div className="container">
-            <h2>
+            <h1>
               Welcome to Code Confectioners <br/> Where Every Cake Tells a Delicious
               Story!
-            </h2>
+            </h1>
             <div className="row">
               <div className="col">
                 <div className="col d-flex align-items-center justify-content-center">
