@@ -4,7 +4,7 @@ import cookieParser from 'cookie-parser';
 import compress from 'compression';
 import cors from 'cors';
 import helmet from 'helmet';
-import Template from './../template.js';
+
 import userRoutes from './routes/user.routes.js';
 import authRoutes from './routes/auth.routes.js';
 import productRoutes from './routes/product.routes.js';
@@ -23,7 +23,7 @@ app.use(cookieParser());
 app.use(compress());
 app.use(helmet());
 app.use(cors());
-app.use('/dist', express.static(path.join(CURRENT_WORKING_DIR, 'dist/app')));
+app.use(express.static(path.join(CURRENT_WORKING_DIR, 'dist/app')));
 app.use('/', userRoutes);
 app.use('/', authRoutes);
 app.use('/', productRoutes);
