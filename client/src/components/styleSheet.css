@@ -5,28 +5,65 @@
   float: right;
 }
 
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: space-around;
+/*Nav Bar*/
+#nav-container {
+  width: 100%;
+  background-color: #f4f1de;
 }
 
-li {
-  display: inline-block;
-  margin-right: 20px;
+a.nav-link {
+  color: #3d405b;
+  font-weight: 600;
+  font-size: 2vw;
+  box-shadow: inset 0 0 0 0 #3a6ea5;
+  transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border-radius: 5px;
 }
 
-li a {
-  text-decoration: none;
-  color: #fff;
+.nav-link-active {
+  color: #f4f1de;
   font-weight: bold;
-  font-size: 16px;
+}
+a.nav-link:hover {
+  color: #f2cc8f;
+  box-shadow: inset 100px 0 0 0 #3d405b;
 }
 
-#navBar {
+p {
+  text-align: justify;
+  padding: 10px;
+  text-indent: 0.5in;
+  font-size: 1.5vw;
+}
+
+h1 {
+  font-size: 4.5vw;
   text-align: center;
+}
+
+h2 {
+  text-align: center;
+  color: #3d405b;
+  padding: 5px;
+  font-size: 3.5vw;
+}
+
+h3 {
+  text-align: center;
+  color: #3d405b;
+  padding: 5px;
+  font-size: 3vw;
+}
+
+p.blockquote {
+  letter-spacing: 1.5px;
+  text-indent: 20px;
+  text-align: center;
+  font-style: italic;
+  font-size: 3vw;
+  color: #3d405b;
+  border: solid 2px #e07a5f;
+  border-radius: 10px;
 }
 
 /* Heading */
@@ -40,14 +77,13 @@ img {
 #header-container {
   height: 100%;
   width: 100%;
-  background-color: #ffb4a2;
+  background-color: #e07a5f;
   padding-top: 50px;
   position: relative;
   text-align: center;
 }
 
 #title-container {
-  border: 5px solid #ffcdb2;
   padding: 10px;
   padding-top: 50px;
   padding-bottom: 50px;
@@ -70,28 +106,34 @@ img {
 .header {
   text-align: center;
   letter-spacing: 5px;
-  color: #6d6875;
+  color: #ffffff;
 }
 
-/*Nav Bar*/
-#nav-container {
-  
+/*Footer*/
+
+footer {
+  bottom: 0;
   width: 100%;
-  background-color: #ffcdb2;
+  height: 2.5rem;
+  text-align: center;
+  color: #3d405b;
+  background-color: #f4f1de;
+  font-weight: 700;
 }
 
+/*Body*/
 .container-fluid {
   margin: auto;
-  margin-top: 50px;
-  width: 95%;
+  width: 90%;
   height: 100%;
-  border-radius: 25px;
+  background-color: #f2cc8f;
 }
-a.nav-link {
-  color: #6d6875;
-  font-weight: 600;
+
+/*Cakes*/
+th {
+  text-align: center;
+  color: #b5838d;
   font-size: 2vw;
-  box-shadow: inset 0 0 0 0 #b5838d;
-  transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  border-radius: 5px;
 }
+
+/*Home Page*/

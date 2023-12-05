@@ -1,16 +1,17 @@
-import React, { useState } from "react";
-import Navigation from "../src/components/navbar";
-import Header from "../src/components/header";
-import Heading from "../src/components/heading";
-import axios from "axios";
-import auth from "../lib/auth-helper";
+import React, { useState } from 'react';
+import Navigation from '../src/components/navbar';
+import Header from '../src/components/header';
+import Heading from '../src/components/heading';
+import axios from 'axios';
+import auth from '../lib/auth-helper';
+import Footer from '../src/components/footer';
 
 export default function CreateCake() {
-  const [display, setDisplay] = useState("Create Cake");
-  const [name, setName] = useState("");
-  const [price, setPrice] = useState("");
-  const [flavor, setFlavor] = useState("");
-  const [ingredients, setIngredients] = useState("");
+  const [display, setDisplay] = useState('Create Cake');
+  const [name, setName] = useState('');
+  const [price, setPrice] = useState('');
+  const [flavor, setFlavor] = useState('');
+  const [ingredients, setIngredients] = useState('');
 
   function nameValue(event) {
     setName(event.target.value);
@@ -29,7 +30,7 @@ export default function CreateCake() {
     event.preventDefault();
     try {
       let res = await axios.post(
-        "http://localhost:3000/api/products",
+        'http://localhost:3000/api/products',
         {
           name: name,
           price: price,
@@ -39,13 +40,13 @@ export default function CreateCake() {
         {
           headers: {
             auth: auth.isAuthenticated().token,
-            "Content-Type": "application/json",
+            'Content-Type': 'application/json',
           },
         }
       );
-      setDisplay("Cake added successfully!");
+      setDisplay('Cake added successfully!');
     } catch (e) {
-      setDisplay("Cake not added!" + e.message);
+      setDisplay('Cake not added!' + e.message);
     }
   }
   return (
@@ -53,51 +54,92 @@ export default function CreateCake() {
       <Header title="Code Confectioners: Cakes" />
       <Heading />
       <Navigation />
+      <div className="container-fluid">
+        <h1>{display}</h1>
+        <form
+          className="row row-cols-lg-auto g-3 align-items-center"
+          action="/submit_cake"
+          method="POST"
+        >
+          <div className="col-12">
+            <label className="visually-hidden" htmlFor="cakeName">
+              Cake Name:
+            </label>
 
-      <h1>{display}</h1>
-      <form action="/submit_cake" method="POST">
-        <label for="cakeName">Cake Name:</label>
-        <input
-          type="text"
-          id="cakeName"
-          name="cakeName"
-          required
-          value={name}
-          onChange={nameValue}
-        />
-        <br /> <br />
-        <label for="Flavor">Flavor:</label>
-        <input
-          type="text"
-          id="cakeFlavor"
-          name="cakeFlavor"
-          required
-          value={flavor}
-          onChange={flavorValue}
-        />
-        <br /> <br />
-        <label for="Price">Price:</label>
-        <input
-          type="text"
-          id="cakeFlavor"
-          name="cakeFlavor"
-          required
-          value={price}
-          onChange={priceValue}
-        />
-        <br /> <br />
-        <label for="Flavor">Ingredients:</label>
-        <input
-          type="text"
-          id="cakeFlavor"
-          name="cakeFlavor"
-          required
-          value={ingredients}
-          onChange={ingredientsValue}
-        />
-        <br /> <br />
-        <button onClick={clicked}>Add a Cake</button>
-      </form>
+            <div className="input-group">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Cake Name"
+                id="cakeName"
+                name="cakeName"
+                required
+                value={name}
+                onChange={nameValue}
+              />
+            </div>
+          </div>
+          <br /> <br />
+          <div className="col-12">
+            <label className="visually-hidden" htmlFor="Flavor">
+              Flavor:
+            </label>
+            <div className="input-group">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Flavor"
+                id="cakeFlavor"
+                name="cakeFlavor"
+                required
+                value={flavor}
+                onChange={flavorValue}
+              />
+            </div>
+          </div>
+          <br /> <br />
+          <div className="col-12">
+            <label className="visually-hidden" htmlFor="Price">
+              Price:
+            </label>
+            <div className="input-group">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Price"
+                id="cakeFlavor"
+                name="cakeFlavor"
+                required
+                value={price}
+                onChange={priceValue}
+              />
+            </div>
+          </div>
+          <br /> <br />
+          <div className="col-12">
+            <label className="visually-hidden" htmlFor="Ingredients">
+              Ingredients:
+            </label>
+            <div className="input-group">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Ingredients"
+                id="cakeFlavor"
+                name="cakeFlavor"
+                required
+                value={ingredients}
+                onChange={ingredientsValue}
+              />
+            </div>
+          </div>
+          <br /> <br />
+          <button type="submit" className="btn btn-outline-primary" onClick={clicked}>
+            Add a Cake
+          </button>
+        </form>
+      </div>
+      <Footer />
     </div>
   );
 }

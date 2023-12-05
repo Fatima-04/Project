@@ -23,24 +23,70 @@ const CustomForm = ({ onSubmit }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Name:
-        <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
-      </label>
-      <br />
-      <label>
-        Price:
-        <input type="text" value={price} onChange={(e) => setPrice(e.target.value)} />
-      </label>
-      <br />
-      <label>
-        Flavor:
-        <input type="text" value={flavor} onChange={(e) => setFlavor(e.target.value)} />
-      </label>
-      <br />
-      <button type="submit">Submit</button>
-    </form>
+    <div className="container-fluid">
+      <form
+        className="row row-cols-lg-auto g-3 align-items-center"
+        onSubmit={handleSubmit}
+      >
+        <div className="col-12">
+          <label
+            className="visually-hidden"
+            htmlFor="inlineFormInputGroupUsername"
+          >
+            Name:
+            <div className="input-group">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </div>
+          </label>
+        </div>
+        <br />
+        <div className="col-12">
+          <label
+            className="visually-hidden"
+            htmlFor="inlineFormInputGroupUsername"
+          >
+            Price:
+            <div className="input-group">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Price"
+                value={price}
+                onChange={(e) => setPrice(e.target.value)}
+              />
+            </div>
+          </label>
+        </div>
+        <br />
+        <label
+          className="visually-hidden"
+          htmlFor="inlineFormInputGroupUsername"
+        >
+          Flavor:
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Flavor"
+            value={flavor}
+            onChange={(e) => setFlavor(e.target.value)}
+          />
+        </label>
+        <br />
+        <button
+          type="submit"
+          className="btn btn-primary"
+          onClick={handleSubmit}
+        >
+          Submit
+        </button>
+      </form>
+    </div>
   );
 };
 

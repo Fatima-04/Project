@@ -18,12 +18,12 @@ const Navigation = () => {
     <div id="nav-container">
   <ul className="nav justify-content-center">
     <li className="nav-item">
-      <a href="/" className="nav-link" style={isActive(location, '/')}>
+      <a href="/" className={`nav-link ${isActive(location, '/') ? 'nav-link-active' : ''}`}>
         Home
       </a>
     </li>
     <li className="nav-item">
-      <a href="/cake" className="nav-link" style={isActive(location, '/cake')}>
+      <a href="/cake" className={`nav-link ${isActive(location, '/cake') ? 'nav-link-active' : ''}`}>
         Cakes
       </a>
     </li>
@@ -32,7 +32,7 @@ const Navigation = () => {
       <span>
         <ul className="nav justify-content-center">
           <li className="nav-item">
-            <a href="/signup" className="nav-link" style={isActive(location, '/signup')}>
+            <a href="/signup" className={`nav-link ${isActive(location, '/signup') ? 'nav-link-active' : ''}`}>
               Sign Up
             </a>
           </li>
@@ -49,13 +49,13 @@ const Navigation = () => {
       <span>
         <ul className="nav justify-content-center">
           <li className="nav-item">
-            <a href="/customorder" className="nav-link" style={isActive(location, '/customorder')}>
+            <a href="/customorder" className={`nav-link ${isActive(location, '/customorder') ? 'nav-link-active' : ''}`}>
               Custom Order
             </a>
           </li>
 
           <li className="nav-item">
-            <a href="/cart" className="nav-link" style={isActive(location, '/cart')}>
+            <a href="/cart" className={`nav-link ${isActive(location, '/cart') ? 'nav-link-active' : ''}`}>
               Cart
             </a>
           </li>

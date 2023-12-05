@@ -4,6 +4,7 @@ import Navigation from '../src/components/navbar';
 import Header from '../src/components/header';
 import Heading from '../src/components/heading';
 import CustomForm from '../src/components/customForm';
+import Footer from '../src/components/footer';
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -28,6 +29,7 @@ return (
   <Heading/>
   <Navigation/>
   <CustomForm/>
+  <Footer/>
 </div>
 )
 }

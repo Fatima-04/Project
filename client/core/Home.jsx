@@ -3,7 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Navigation from '../src/components/navbar';
 import Header from '../src/components/header';
 import Heading from '../src/components/heading';
-import Body from '../src/components/body';
+import Body from '../src/components/bodyHome';
+import Footer from '../src/components/footer';
 
 const useStyles = makeStyles((theme) => ({
   card: {
@@ -28,6 +29,7 @@ export default function Home() {
       <Heading />
       <Navigation />
       <Body />
+      <Footer />
     </div>
   );
 }
