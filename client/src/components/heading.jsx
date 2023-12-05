@@ -1,9 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 const Heading = ({ title }) => {
   return (
-    
     <div id="header-container">
       <div id="title-container">
         <div id="header-box">
@@ -14,7 +13,7 @@ const Heading = ({ title }) => {
           <img
             className="img-fluid"
             alt="Logo Icon"
-            src=".\images\Cake_Logo.png"
+            src="../public/images/Cake_Logo.png"
             width="200"
             height="200"
           />

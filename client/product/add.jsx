@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
-import Navigation from '../src/components/navbar';
-import Header from '../src/components/header';
-import Heading from '../src/components/heading';
-import axios from 'axios';
-import auth from '../lib/auth-helper';
-import Footer from '../src/components/footer';
+import React, { useState } from "react";
+import Navigation from "../src/components/navbar";
+import Header from "../src/components/header";
+import Heading from "../src/components/heading";
+import axios from "axios";
+import auth from "../lib/auth-helper";
+import Footer from "../src/components/footer";
 
 export default function CreateCake() {
-  const [display, setDisplay] = useState('Create Cake');
-  const [name, setName] = useState('');
-  const [price, setPrice] = useState('');
-  const [flavor, setFlavor] = useState('');
-  const [ingredients, setIngredients] = useState('');
+  const [display, setDisplay] = useState("Create Cake");
+  const [name, setName] = useState("");
+  const [price, setPrice] = useState("");
+  const [flavor, setFlavor] = useState("");
+  const [ingredients, setIngredients] = useState("");
 
   function nameValue(event) {
     setName(event.target.value);
@@ -30,7 +30,7 @@ export default function CreateCake() {
     event.preventDefault();
     try {
       let res = await axios.post(
-        'http://localhost:3000/api/products',
+        "http://localhost:3000/api/products",
         {
           name: name,
           price: price,
@@ -40,13 +40,13 @@ export default function CreateCake() {
         {
           headers: {
             auth: auth.isAuthenticated().token,
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           },
         }
       );
-      setDisplay('Cake added successfully!');
+      setDisplay("Cake added successfully!");
     } catch (e) {
-      setDisplay('Cake not added!' + e.message);
+      setDisplay("Cake not added!" + e.message);
     }
   }
   return (
@@ -134,8 +134,8 @@ export default function CreateCake() {
             </div>
           </div>
           <br /> <br />
-          <button type="submit" className="btn btn-outline-primary" onClick={clicked}>
-            Add a Cake
+          <button type="submit" className="btn btn-secondary" onClick={clicked}>
+            Add Cake
           </button>
         </form>
       </div>

@@ -81,48 +81,82 @@ export default function UpdateCake() {
       <Navigation />
 
       <h1>{display}</h1>
-      <form action="/submit_cake" method="PUT">
-        <label for="cakeName">Cake Name:</label>
-        <input
-          type="text"
-          id="cakeName"
-          name="cakeName"
-          required
-          value={name}
-          onChange={nameValue}
-        />
-        <br /> <br />
-        <label for="Flavor">Flavor:</label>
-        <input
-          type="text"
-          id="cakeFlavor"
-          name="cakeFlavor"
-          required
-          value={flavor}
-          onChange={flavorValue}
-        />
-        <br /> <br />
-        <label for="Price">Price:</label>
-        <input
-          type="text"
-          id="cakeFlavor"
-          name="cakeFlavor"
-          required
-          value={price}
-          onChange={priceValue}
-        />
-        <br /> <br />
-        <label for="Flavor">Ingredients:</label>
-        <input
-          type="text"
-          id="cakeFlavor"
-          name="cakeFlavor"
-          required
-          value={ingredients}
-          onChange={ingredientsValue}
-        />
-        <br /> <br />
-        <button onClick={clicked}>Update</button>
+      <form
+        className="row row-cols-lg-auto g-3 align-items-center"
+        action="/submit_cake"
+        method="PUT"
+      >
+        <div className="col-12">
+          <label className="visually-hidden" for="cakeName">
+            Cake Name:
+          </label>
+          <div className="input-group">
+            <input
+              type="text"
+              id="cakeName"
+              name="cakeName"
+              className="form-control"
+              placeholder="Cake Name"
+              required
+              value={name}
+              onChange={nameValue}
+            />
+          </div>
+        </div>
+        <div className="col-12">
+          <label className="visually-hidden" for="Flavor">
+            Flavor:
+          </label>
+          <div className="input-group">
+            <input
+              type="text"
+              id="cakeFlavor"
+              name="cakeFlavor"
+              className="form-control"
+              placeholder="Cake Name"
+              required
+              value={flavor}
+              onChange={flavorValue}
+            />
+          </div>
+        </div>
+        <div className="col-12">
+          <label className="visually-hidden" for="Price">
+            Price:
+          </label>
+          <div className="input-group">
+            <input
+              type="text"
+              id="cakeFlavor"
+              name="cakeFlavor"
+              className="form-control"
+              placeholder="Cake Name"
+              required
+              value={price}
+              onChange={priceValue}
+            />
+          </div>
+        </div>
+        <div className="col-12">
+          <label className="visually-hidden" for="Flavor">
+            Ingredients:
+          </label>
+          <div className="input-group">
+            <input
+              type="text"
+              id="cakeFlavor"
+              className="form-control"
+              placeholder="Cake Name"
+              name="cakeFlavor"
+              required
+              value={ingredients}
+              onChange={ingredientsValue}
+            />
+          </div>
+        </div>
+        <button className="btn btn-secondary" onClick={clicked}>
+          Update
+        </button>
       </form>
     </div>
   );
