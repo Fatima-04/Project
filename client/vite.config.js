@@ -12,7 +12,7 @@ export default defineConfig({
   base: "./",
   plugins: [react()],
   server: {
-    hose: true,
+    host: true,
     proxy: {
       "/api": {
         target: `http://localhost:${PORT}`,
