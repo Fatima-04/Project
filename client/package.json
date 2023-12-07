@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite && sleep 20 && nodemon ../server.js",
+    "dev": "vite && wait-for localhost:5173 -t 300 && nodemon ../server.js",
     "client:dev": "vite",
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
