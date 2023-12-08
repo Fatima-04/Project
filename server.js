@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
 
 
 // Start the server
-app.listen(config.port, 'localhost', (err) => {
+app.listen(config.port, '0.0.0.0', (err) => {
   if (err) {
     console.log(err); // Log any errors
   }
