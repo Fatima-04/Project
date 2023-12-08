@@ -5,6 +5,9 @@ import Heading from "../src/components/heading";
 import axios from "axios";
 import auth from "../lib/auth-helper";
 import Footer from "../src/components/footer";
+import feConfig from "../frontend-config";
+
+const PORT = feConfig.serverPort;
 
 export default function CreateCake() {
   const [display, setDisplay] = useState("Create Cake");
@@ -30,7 +33,7 @@ export default function CreateCake() {
     event.preventDefault();
     try {
       let res = await axios.post(
-        "http://localhost:3000/api/products",
+        `http://localhost:${PORT}/api/products`,
         {
           name: name,
           price: price,

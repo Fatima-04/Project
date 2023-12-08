@@ -1,16 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Navigation from '../src/components/navbar';
-import Header from '../src/components/header';
-import Heading from '../src/components/heading';
-import axios from 'axios';
-import auth from '../lib/auth-helper';
-import Footer from '../src/components/footer';
+import React, { useState, useEffect } from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Navigation from "../src/components/navbar";
+import Header from "../src/components/header";
+import Heading from "../src/components/heading";
+import axios from "axios";
+import auth from "../lib/auth-helper";
+import Footer from "../src/components/footer";
+import feConfig from "../frontend-config";
+const PORT = feConfig.serverPort;
 
 const useStyles = makeStyles((theme) => ({
   card: {
     maxWidth: 600,
-    margin: 'auto',
+    margin: "auto",
     marginTop: theme.spacing(5),
   },
   title: {
@@ -26,7 +28,7 @@ export default function Cakes() {
   const [cakes, setCakes] = useState([]);
 
   const getAllCakes = async () => {
-    let cakesArray = await axios.get('http://localhost:3000/api/products', {
+    let cakesArray = await axios.get(`http://localhost:${PORT}/api/products`, {
       headers: {
         auth: auth.isAuthenticated().token,
       },
@@ -39,7 +41,7 @@ export default function Cakes() {
   }, []);
 
   const handleDelete = (cakeId) => {
-    axios.delete('http://localhost:3000/api/products/' + cakeId, {
+    axios.delete(`http://localhost:${PORT}/api/products/` + cakeId, {
       headers: {
         auth: auth.isAuthenticated().token,
       },
@@ -49,7 +51,7 @@ export default function Cakes() {
 
   const handleUpdate = (cakeId) => {
     axios.put(
-      'http://localhost:3000/api/products/' + cakeId,
+      `http://localhost:${PORT}/api/products/` + cakeId,
       {},
       {
         headers: {
@@ -96,7 +98,7 @@ export default function Cakes() {
                   <td>
                     <a
                       className="btn btn-outline-secondary"
-                      href={'/update/' + cake._id}
+                      href={"/update/" + cake._id}
                     >
                       Update
                     </a>

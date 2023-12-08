@@ -5,6 +5,8 @@ import Header from "../src/components/header";
 import Heading from "../src/components/heading";
 import axios from "axios";
 import auth from "../lib/auth-helper";
+import feConfig from "../frontend-config";
+const PORT = feConfig.serverPort;
 
 export default function UpdateCake() {
   const [display, setDisplay] = useState("Update Cake");
@@ -20,7 +22,7 @@ export default function UpdateCake() {
     let dataToUpdate;
     try {
       dataToUpdate = await axios.get(
-        "http://localhost:3000/api/products/" + cakeId,
+        `http://localhost:${PORT}/api/products/` + cakeId,
         {
           headers: {
             auth: auth.isAuthenticated().token,
@@ -54,7 +56,7 @@ export default function UpdateCake() {
     event.preventDefault();
     try {
       let res = await axios.put(
-        "http://localhost:3000/api/products/" + cakeId,
+        `http://localhost:${PORT}/api/products/` + cakeId,
         {
           name: name,
           price: price,
