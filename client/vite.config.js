@@ -6,7 +6,7 @@ import process from "process";
 
 dotenv.config();
 
-const { PORT = 3000 } = process.env;
+const { SERVER_PORT = 3000 } = process.env;
 
 export default defineConfig({
   base: "./",
@@ -15,11 +15,11 @@ export default defineConfig({
     host: "0.0.0.0",
     proxy: {
       "/api": {
-        target: `http://localhost:${PORT}`,
+        target: `http://localhost:${SERVER_PORT}`,
         changeOrigin: true,
       },
       "/auth": {
-        target: `http://localhost:${PORT}`,
+        target: `http://localhost:${SERVER_PORT}`,
         changeOrigin: true,
       },
     },
