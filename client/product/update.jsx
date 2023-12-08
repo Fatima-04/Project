@@ -7,6 +7,7 @@ import axios from "axios";
 import auth from "../lib/auth-helper";
 import feConfig from "../frontend-config";
 const PORT = feConfig.serverPort;
+const server = "https://codeconfectioners-ychr.onrender.com";
 
 export default function UpdateCake() {
   const [display, setDisplay] = useState("Update Cake");
@@ -21,14 +22,11 @@ export default function UpdateCake() {
   async function getCakeById(id) {
     let dataToUpdate;
     try {
-      dataToUpdate = await axios.get(
-        `http://localhost:${PORT}/api/products/` + cakeId,
-        {
-          headers: {
-            auth: auth.isAuthenticated().token,
-          },
-        }
-      );
+      dataToUpdate = await axios.get(`${server}/api/products/` + cakeId, {
+        headers: {
+          auth: auth.isAuthenticated().token,
+        },
+      });
       setName(dataToUpdate.data.name);
       setPrice(dataToUpdate.data.price);
       setFlavor(dataToUpdate.data.flavor);
@@ -56,7 +54,7 @@ export default function UpdateCake() {
     event.preventDefault();
     try {
       let res = await axios.put(
-        `http://localhost:${PORT}/api/products/` + cakeId,
+        `${server}/api/products/` + cakeId,
         {
           name: name,
           price: price,

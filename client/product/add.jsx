@@ -8,6 +8,7 @@ import Footer from "../src/components/footer";
 import feConfig from "../frontend-config";
 
 const PORT = feConfig.serverPort;
+const server = "https://codeconfectioners-ychr.onrender.com";
 
 export default function CreateCake() {
   const [display, setDisplay] = useState("Create Cake");
@@ -33,7 +34,7 @@ export default function CreateCake() {
     event.preventDefault();
     try {
       let res = await axios.post(
-        `http://localhost:${PORT}/api/products`,
+        `${server}/api/products`,
         {
           name: name,
           price: price,

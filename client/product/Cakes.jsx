@@ -8,6 +8,7 @@ import auth from "../lib/auth-helper";
 import Footer from "../src/components/footer";
 import feConfig from "../frontend-config";
 const PORT = feConfig.serverPort;
+const server = "https://codeconfectioners-ychr.onrender.com";
 
 const useStyles = makeStyles((theme) => ({
   card: {
@@ -28,7 +29,7 @@ export default function Cakes() {
   const [cakes, setCakes] = useState([]);
 
   const getAllCakes = async () => {
-    let cakesArray = await axios.get(`http://localhost:${PORT}/api/products`, {
+    let cakesArray = await axios.get(`${server}/api/products`, {
       headers: {
         auth: auth.isAuthenticated().token,
       },
@@ -41,7 +42,7 @@ export default function Cakes() {
   }, []);
 
   const handleDelete = (cakeId) => {
-    axios.delete(`http://localhost:${PORT}/api/products/` + cakeId, {
+    axios.delete(`${server}/api/products/` + cakeId, {
       headers: {
         auth: auth.isAuthenticated().token,
       },
@@ -51,7 +52,7 @@ export default function Cakes() {
 
   const handleUpdate = (cakeId) => {
     axios.put(
-      `http://localhost:${PORT}/api/products/` + cakeId,
+      `${server}/api/products/` + cakeId,
       {},
       {
         headers: {

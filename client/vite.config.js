@@ -7,7 +7,7 @@ import process from "process";
 dotenv.config();
 
 const { SERVER_PORT = 3000 } = process.env;
-
+const server = "https://codeconfectioners-ychr.onrender.com/";
 export default defineConfig({
   base: "./",
   plugins: [react()],
@@ -15,11 +15,11 @@ export default defineConfig({
     host: "0.0.0.0",
     proxy: {
       "/api": {
-        target: `http://localhost:${SERVER_PORT}`,
+        target: server,
         changeOrigin: true,
       },
       "/auth": {
-        target: `http://localhost:${SERVER_PORT}`,
+        target: server,
         changeOrigin: true,
       },
     },
